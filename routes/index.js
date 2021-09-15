@@ -51,7 +51,7 @@ router.get('/dashboard', authMiddleware.ensureLoggedIn, authMiddleware.EnsureCan
       var re = /\D/g;
       
       array.sort(function(a, b) {
-          return(parseInt(b.ordnbr.replace(re, ""), 10) - parseInt(a.ordnbr.replace(re, ""), 10));
+          return(parseInt(b.ordnbr.replace(re, ''), 10) - parseInt(a.ordnbr.replace(re, ''), 10));
       });
       return(array);
   }
