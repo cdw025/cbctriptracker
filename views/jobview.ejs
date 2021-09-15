@@ -263,9 +263,9 @@ td {
               <div class="col-4">
                   <div class="form-group">
                       <label for="elumpSumPaid">Lump Sum Sent to Billing?</label>
-                      <select class="form-control elumpSumPaid" value="<%= job.lump_sum_paid %>">
-                        <option value="unsent" <%= job.lump_sum_paid == 'unsent' ? 'selected' : ''%>>unsent</option>
-                        <option value="sent" <%= job.lump_sum_paid == 'sent' ? 'selected' : ''%>>sent</option>
+                      <select class="form-control elumpSumPaid" value="<%= job.lump_sum_sent %>">
+                        <option value="unsent" <%= job.lump_sum_sent == 'unsent' ? 'selected' : ''%>>unsent</option>
+                        <option value="sent" <%= job.lump_sum_sent == 'sent' ? 'selected' : ''%>>sent</option>
                       </select>
                     </div>
             </div>
@@ -294,9 +294,9 @@ td {
           <div class="col-4">
               <div class="form-group">
                   <label for="eproformaPaid">Proforma Sent to Billing?</label>
-                  <select class="form-control eproformaPaid" value="<%= job.proforma_paid %>">
-                    <option value="unsent" <%= job.proforma_paid == 'unsent' ? 'selected' : ''%>>unsent</option>
-                    <option value="sent" <%= job.proforma_paid == 'sent' ? 'selected' : ''%>>sent</option>
+                  <select class="form-control eproformaPaid" value="<%= job.proforma_sent %>">
+                    <option value="unsent" <%= job.proforma_sent == 'unsent' ? 'selected' : ''%>>unsent</option>
+                    <option value="sent" <%= job.proforma_sent == 'sent' ? 'selected' : ''%>>sent</option>
                   </select>
                 </div>
         </div>
@@ -420,7 +420,7 @@ td {
                     <td class="col-3 bold">Origin:</td>
                     <td class="col-4"><%= job.origin %></td>
                     <td class="col-2 bold">Lump Sum:</td>
-                    <td class="col-3">$<%= Intl.NumberFormat().format(job.lump_sum_amount) %> <a>(<%= job.lump_sum_paid %>)</a></td>
+                    <td class="col-3">$<%= Intl.NumberFormat().format(job.lump_sum_amount) %> <a>(<%= job.lump_sum_sent %>)</a></td>
                   </tr>
                   <tr class="d-flex">
                     <td class="col-3 bold">Origin Desc.:</td>
@@ -438,7 +438,7 @@ td {
                     <td class="col-3 bold">Destination Description:</td>
                     <td class="col-4"><%= job.destination_desc %></td>
                     <td class="col-2 bold">Proforma:</td>
-                    <td class="col-3">$<%= Intl.NumberFormat().format(job.proforma_amount) %> <a>(<%= job.proforma_paid %>)</a></td>
+                    <td class="col-3">$<%= Intl.NumberFormat().format(job.proforma_amount) %> <a>(<%= job.proforma_sent %>)</a></td>
                   </tr>
                   <tr class="d-flex">
                     <td class="col-3 bold">Start Date:</td>

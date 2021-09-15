@@ -69,7 +69,7 @@ function getHostURL() {
     } else {
       lump_sum_amount = lump_sum_amount;
     }
-    const lump_sum_paid = $('#lumpSumPaid').val();
+    const lump_sum_sent = $('#lumpSumPaid').val();
 
  const job = {
             ordnbr,
@@ -96,7 +96,7 @@ function getHostURL() {
             vendor_email,
             vendor_notes,
             lump_sum_amount,
-            lump_sum_paid
+            lump_sum_sent
         };
 
         return job;
@@ -140,9 +140,9 @@ function getHostURL() {
     } else {
       lump_sum_amount = lump_sum_amount;
     }
-    const lump_sum_paid = form.find('.elumpSumPaid').val();
+    const lump_sum_sent = form.find('.elumpSumPaid').val();
     const proforma_amount = form.find('.eproformaAmount').val();
-    const proforma_paid = form.find('.eproformaPaid').val();
+    const proforma_sent = form.find('.eproformaPaid').val();
     const kickoff_meeting = form.find('.ekickoffMeeting').val();
     const barge_name = form.find('.ebargeName').val();
     const tug_name = form.find('.etugName').val();
@@ -170,9 +170,9 @@ function getHostURL() {
             vendor_notes,
             contract_signed,
             lump_sum_amount,
-            lump_sum_paid,
+            lump_sum_sent,
             proforma_amount,
-            proforma_paid,
+            proforma_sent,
             kickoff_meeting,
             barge_name,
             tug_name
@@ -203,9 +203,9 @@ function getDuplicateJobFromForm(form) {
   const vendor_notes = form.find('.evendor_notes').val();
   const contract_signed = form.find('.econtractSigned').val();
   const lump_sum_amount = form.find('.elumpSumAmount').val();
-  const lump_sum_paid = form.find('.elumpSumPaid').val();
+  const lump_sum_sent = form.find('.elumpSumPaid').val();
   const proforma_amount = form.find('.eproformaAmount').val();
-  const proforma_paid = form.find('.eproformaPaid').val();
+  const proforma_sent = form.find('.eproformaPaid').val();
   const kickoff_meeting = form.find('.ekickoffMeeting').val();
   const barge_name = form.find('.ebargeName').val();
   const tug_name = form.find('.etugName').val();
@@ -232,9 +232,9 @@ function getDuplicateJobFromForm(form) {
           vendor_notes,
           contract_signed,
           lump_sum_amount,
-          lump_sum_paid,
+          lump_sum_sent,
           proforma_amount,
-          proforma_paid,
+          proforma_sent,
           kickoff_meeting,
           barge_name,
           tug_name
