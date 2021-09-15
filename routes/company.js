@@ -26,7 +26,15 @@ router.get('/:company', authMiddleware.ensureLoggedIn, authMiddleware.ensureCorr
                 assets = JSON.parse(JSON.stringify(assets));
                 logs = JSON.parse(JSON.stringify(logs));
                 assets = assets.sort((a, b) => parseFloat(a.tow_group) - parseFloat(b.tow_group));
-                jobs = jobs.sort((a, b) => parseFloat(a.order_id) - parseFloat(b.order_id));
+                function sortByDigits(array) {
+                    var re = /\D/g;
+                    
+                    array.sort(function(a, b) {
+                        return(parseInt(b.ordnbr.replace(re, ''), 10) - parseInt(a.ordnbr.replace(re, ''), 10));
+                    });
+                    return(array);
+                }
+                jobs = sortByDigits(jobs);
                 logs = logs.sort((a, b) => parseFloat(b.log_id) - parseFloat(a.log_id));
 
                 // javascript function to find max log_id value for each asset_name 
@@ -62,7 +70,15 @@ router.get('/:company', authMiddleware.ensureLoggedIn, authMiddleware.ensureCorr
                 assets = JSON.parse(JSON.stringify(assets));
                 logs = JSON.parse(JSON.stringify(logs));
                 assets = assets.sort((a, b) => parseFloat(a.tow_group) - parseFloat(b.tow_group));
-                jobs = jobs.sort((a, b) => parseFloat(a.order_id) - parseFloat(b.order_id));
+                function sortByDigits(array) {
+                    var re = /\D/g;
+                    
+                    array.sort(function(a, b) {
+                        return(parseInt(b.ordnbr.replace(re, ''), 10) - parseInt(a.ordnbr.replace(re, ''), 10));
+                    });
+                    return(array);
+                }
+                jobs = sortByDigits(jobs);
                 logs = logs.sort((a, b) => parseFloat(b.log_id) - parseFloat(a.log_id));
                 // trying to group delays by date
                 // let finalObj = {}
