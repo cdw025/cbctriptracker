@@ -262,8 +262,8 @@ td {
               </div>
               <div class="col-4">
                   <div class="form-group">
-                      <label for="elumpSumPaid">Lump Sum Sent to Billing?</label>
-                      <select class="form-control elumpSumPaid" value="<%= job.lump_sum_sent %>">
+                      <label for="elumpSumSent">Lump Sum Sent to Billing?</label>
+                      <select class="form-control elumpSumSent" value="<%= job.lump_sum_sent %>">
                         <option value="unsent" <%= job.lump_sum_sent == 'unsent' ? 'selected' : ''%>>unsent</option>
                         <option value="sent" <%= job.lump_sum_sent == 'sent' ? 'selected' : ''%>>sent</option>
                       </select>
@@ -293,8 +293,8 @@ td {
           </div>
           <div class="col-4">
               <div class="form-group">
-                  <label for="eproformaPaid">Proforma Sent to Billing?</label>
-                  <select class="form-control eproformaPaid" value="<%= job.proforma_sent %>">
+                  <label for="eproformaSent">Proforma Sent to Billing?</label>
+                  <select class="form-control eproformaSent" value="<%= job.proforma_sent %>">
                     <option value="unsent" <%= job.proforma_sent == 'unsent' ? 'selected' : ''%>>unsent</option>
                     <option value="sent" <%= job.proforma_sent == 'sent' ? 'selected' : ''%>>sent</option>
                   </select>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('partials/head') %>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.css">
+</head>
+<style>
+  tr.hide-table-padding td {
+  padding: 0;
+}
+
+.expand-button {
+    position: relative;
+}
+
+.accordion-toggle .expand-button:after
+{
+  position: absolute;
+  left:.75rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  content: '-';
+}
+.accordion-toggle.collapsed .expand-button:after
+{
+  content: '+';
+}
+
+#tdcard {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tow-card {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #686a6e;
+}
+
+#cardtitle {
+  margin-bottom: 0px;
+}
+
+.table-responsive {
+  margin-top: 10px;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.horizontal-line {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.hr-line-line {
+  margin: 1px;
+  border: 1px solid #F0F8FF;
+}
+
+.asset-row {
+  font-size: 100%;
+}
+
+.job-details {
+  padding-top: 10px;
+  font-size: 100%;
+}
+
+.nav-tabs a {
+  color: black;
+}
+
+.card-header {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 0px;
+}
+
+.company-container-div {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.table>tbody>tr>td {
+  border-top: none;
+}
+
+
+table>thead>tr>th {
+  border-top: none;
+}
+
+.table {
+  margin: 0px;
+  text-align: center;
+}
+
+.btn-sm {
+  height:90%;
+  width:90%;
+  font-size: 90%;
+  padding: 0px;
+  vertical-align: middle;
+}
+
+.btn-secondary {
+  font-size: 80%;
+}
+
+.dropdown-item {
+  font-size: 100%;
+}
+
+.job-notes {
+  white-space: pre-wrap;
+}
+
+td {
+  font-size: 120%;
+}
+
+.form-group {
+  font-size: 120%;
+}
+
+.job-note-headers {
+  text-align: left;
+  text-decoration: underline;
+}
+
+.right-tabs .nav {
+    float: right;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.form-control {
+  color: black;
+}
+
+.dropdown-item {
+  font-size: small;
+}
+</style>
+
+<header class="page header">
+    <%- include ('partials/header') %>
+ </header>
+
+<main>
+  <br>
+  <div class="container-fluid company-container-div">
+  <h3 style="text-align: center;">Billing Status Table</h3>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-9"></div>
+      <div class="table-responsive">
+        <table class="table table-hover table-sm" data-toggle="table" data-search="true" data-pagination="true" data-page-size="25">
+          <thead>
+            <tr>
+              <th data-sortable="true" scope="col">D#</th>
+              <th data-sortable="true" scope="col">Lump Sum Amount</th>
+              <th data-sortable="true" scope="col">Lump Sum Sent to Accounting?</th>
+              <th data-sortable="true" scope="col">Lump Sum invoiced?</th>
+              <th data-sortable="true" scope="col">Proforma Amount</th>
+              <th data-sortable="true" scope="col">Proforma Sent to Accounting?</th>
+              <th data-sortable="true" scope="col">Proforma invoiced?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% jobs.forEach(function(job) { %>
+                <tr>
+                    <td><%= job.ordnbr %></td>
+                    <td>$<%= Intl.NumberFormat().format(job.lump_sum_amount) %></td>
+                    <td><%= job.lump_sum_sent %></td>
+                    <td><%= job.lump_sum_invoiced %></td>
+                    <td>$<%= Intl.NumberFormat().format(job.proforma_amount) %></td>
+                    <td><%= job.proforma_sent %></td>
+                    <td><%= job.proforma_invoiced %></td>
+                </tr>
+                <% }); %>
+          </tbody>
+        </table>
+        </div>
+    </div>
+    <br>
+   </div>
+   <div class="container-fluid">
+    <br>
+    </div>  
+    </main>
+</div>
+    <footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.js"></script>
+        <%- include ('partials/footer') %>
+    </footer>
+    <script src="/shared.js" charset="utf-8"></script>
+    <script src="/company.js" charset="utf-8"></script>
+</html>

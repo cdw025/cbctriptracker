@@ -20,8 +20,10 @@ exports.up = function(knex) {
       table.string('destination_desc');
       table.bigInteger('lump_sum_amount');
       table.string('lump_sum_sent');
+      table.string('lump_sum_invoiced');
       table.bigInteger('proforma_amount');
       table.string('proforma_sent');
+      table.string('proforma_invoiced');
       table.string('contract_signed');
       table.string('kickoff_meeting');
       table.string('barge_name');

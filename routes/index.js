@@ -86,4 +86,21 @@ router.get('/locations', authMiddleware.ensureLoggedIn, authMiddleware.EnsureCan
   });
 });
 
+router.get('/billing', authMiddleware.ensureLoggedIn, authMiddleware.EnsureCanalForAccess, function(req, res) {
+  Job.getJobs().then(jobs => {
+    jobs = JSON.parse(JSON.stringify(jobs));
+    // sort trip numbers largest to smallest accounting for leading D in ordnbr
+    function sortByDigits(array) {
+      var re = /\D/g;
+      
+      array.sort(function(a, b) {
+          return(parseInt(b.ordnbr.replace(re, ''), 10) - parseInt(a.ordnbr.replace(re, ''), 10));
+      });
+      return(array);
+  }
+    jobs = sortByDigits(jobs);
+    res.render('billing', { title: 'Express', jobs: jobs});
+  });
+});
+
 module.exports = router;
