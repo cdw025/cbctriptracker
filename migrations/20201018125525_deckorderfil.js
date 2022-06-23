@@ -36,6 +36,7 @@ exports.up = function(knex) {
       table.string('last_modified_by');
       table.timestamp('created_dttm', { useTz : false});
       table.timestamp('modified_dttm', { useTz : false});
+       
   });
 };
 
