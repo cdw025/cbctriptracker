@@ -40,6 +40,7 @@ function getHostURL() {
     const destination_desc = $('#destDesc').val();
     const contract_signed = $('#contractSigned').val();
     const kickoff_meeting = $('#kickoffMeeting').val();
+
     const barge_name = $('#bargeName').val();
     const tug_name = $('#tugName').val();
     const ord_notes = $('#jobNotes').val();
@@ -148,6 +149,8 @@ function getHostURL() {
     const proforma_sent = form.find('.eproformaSent').val();
     const proforma_invoiced = form.find('.eproformainvoiced').val();
     const kickoff_meeting = form.find('.ekickoffMeeting').val();
+    const loading_attended = form.find('.eloadingAttended').val();
+    const unloading_attended = form.find('.eunloadingAttended').val();
     const barge_name = form.find('.ebargeName').val();
     const tug_name = form.find('.etugName').val();
 
@@ -180,6 +183,8 @@ function getHostURL() {
             proforma_sent,
             proforma_invoiced,
             kickoff_meeting,
+            loading_attended,
+            unloading_attended,
             barge_name,
             tug_name
         };
@@ -215,6 +220,8 @@ function getDuplicateJobFromForm(form) {
   const proforma_sent = form.find('.eproformaSent').val();
   const proforma_invoiced = form.find('.eproformainvoiced').val();
   const kickoff_meeting = form.find('.ekickoffMeeting').val();
+  const loading_attended = form.find('.eloadingAttended').val();
+  const unloading_attended = form.find('.eunloadingAttended').val();
   const barge_name = form.find('.ebargeName').val();
   const tug_name = form.find('.etugName').val();
 
@@ -246,6 +253,8 @@ function getDuplicateJobFromForm(form) {
           proforma_sent,
           proforma_invoiced,
           kickoff_meeting,
+          loading_attended,
+          unloading_attended,
           barge_name,
           tug_name
       };

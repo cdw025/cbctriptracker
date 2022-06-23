@@ -376,6 +376,26 @@ td {
           </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+          <label for="eloadingAttended">Loading Attended?</label>
+          <select class="form-control eloadingAttended" value="<%= job.loading_attended %>">
+            <option value="No" <%= job.loading_attended == 'No' ? 'selected' : ''%>>No</option>
+            <option value="Yes" <%= job.loading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+          </select>
+        </div>
+</div>
+<div class="col-4">
+  <div class="form-group">
+      <label for="eunloadingAttended">Unloading Attended?</label>
+      <select class="form-control eunloadingAttended" value="<%= job.unloading_attended %>">
+        <option value="No" <%= job.unloading_attended == 'No' ? 'selected' : ''%>>No</option>
+        <option value="Yes" <%= job.unloading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+      </select>
+    </div>
+</div>
+  </div>
           <div class="row">
               <div class="col-12">
                   <div class="form-group">
@@ -637,6 +657,26 @@ td {
             </select>
           </div>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+          <label for="eloadingAttended">Loading Attended?</label>
+          <select class="form-control eloadingAttended" value="<%= job.loading_attended %>">
+            <option value="No" <%= job.loading_attended == 'No' ? 'selected' : ''%>>No</option>
+            <option value="Yes" <%= job.loading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+          </select>
+        </div>
+</div>
+<div class="col-4">
+  <div class="form-group">
+      <label for="eunloadingAttended">Unloading Attended?</label>
+      <select class="form-control eunloadingAttended" value="<%= job.unloading_attended %>">
+        <option value="No" <%= job.unloading_attended == 'No' ? 'selected' : ''%>>No</option>
+        <option value="Yes" <%= job.unloading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+      </select>
+    </div>
+</div>
   </div>
           <div class="row">
               <div class="col-12">
@@ -794,11 +834,15 @@ td {
                 </tr>
                 <tr class="d-flex">
                   <td class="col-3 bold">Start Date:</td>
-                  <td class="col-6"><%= moment(job.est_start_date).format('M/D/YY') %></td>
+                  <td class="col-4"><%= moment(job.est_start_date).format('M/D/YY') %></td>
+                  <td class="col-2 bold">Loading Attended:</td>
+                  <td class="col-3"><%= job.loading_attended %></td>
                 </tr>
                 <tr class="d-flex">
                   <td class="col-3 bold">PM Assigned:</td>
-                  <td class="col-6"><%= job.pm_assigned %></td>
+                  <td class="col-4"><%= job.pm_assigned %></td>
+                  <td class="col-2 bold">Unloading Attended:</td>
+                  <td class="col-3"><%= job.unloading_attended %></td>
                 </tr>
                 <tr class="d-flex">
                   <td class="col-3 bold">Status:</td>
@@ -942,7 +986,7 @@ td {
                 <button type="button" class="btn col-1" data-toggle="modal" data-target="#djobID<%= job.order_id %>">Delete</button>
               </div>
         
-              <!-- Edit Job Modal -->
+          <!-- Edit Job Modal -->
           <div class="modal fade" id="ejobID<%= job.order_id %>" tabindex="-1" role="dialog" aria-labelledby="editTripModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl" role="document">
               <div class="modal-content">
@@ -1112,6 +1156,26 @@ td {
             </select>
           </div>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+          <label for="eloadingAttended">Loading Attended?</label>
+          <select class="form-control eloadingAttended" value="<%= job.loading_attended %>">
+            <option value="No" <%= job.loading_attended == 'No' ? 'selected' : ''%>>No</option>
+            <option value="Yes" <%= job.loading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+          </select>
+        </div>
+</div>
+<div class="col-4">
+  <div class="form-group">
+      <label for="eunloadingAttended">Unloading Attended?</label>
+      <select class="form-control eunloadingAttended" value="<%= job.unloading_attended %>">
+        <option value="No" <%= job.unloading_attended == 'No' ? 'selected' : ''%>>No</option>
+        <option value="Yes" <%= job.unloading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+      </select>
+    </div>
+</div>
   </div>
           <div class="row">
               <div class="col-12">
@@ -1375,6 +1439,26 @@ td {
           </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+          <label for="eloadingAttended">Loading Attended?</label>
+          <select class="form-control eloadingAttended" value="<%= job.loading_attended %>">
+            <option value="No" <%= job.loading_attended == 'No' ? 'selected' : ''%>>No</option>
+            <option value="Yes" <%= job.loading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+          </select>
+        </div>
+</div>
+<div class="col-4">
+  <div class="form-group">
+      <label for="eunloadingAttended">Unloading Attended?</label>
+      <select class="form-control eunloadingAttended" value="<%= job.unloading_attended %>">
+        <option value="No" <%= job.unloading_attended == 'No' ? 'selected' : ''%>>No</option>
+        <option value="Yes" <%= job.unloading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+      </select>
+    </div>
+</div>
+  </div>
           <div class="row">
               <div class="col-12">
                   <div class="form-group">
@@ -1531,12 +1615,16 @@ td {
                     </tr>
                     <tr class="d-flex">
                       <td class="col-3 bold">Start Date:</td>
-                      <td class="col-6"><%= moment(job.est_start_date).format('M/D/YY') %></td>
+                      <td class="col-4"><%= moment(job.est_start_date).format('M/D/YY') %></td>
+                      <td class="col-2 bold">Loading Attended:</td>
+                      <td class="col-3"><%= job.loading_attended %></td>
                     </tr>
                     <tr class="d-flex">
                       <td class="col-3 bold">PM Assigned:</td>
-                      <td class="col-6"><%= job.pm_assigned %></td>
-                    </tr>
+                      <td class="col-4"><%= job.pm_assigned %></td>
+                      <td class="col-2 bold">Unloading Attended:</td>
+                      <td class="col-3"><%= job.unloading_attended %></td>
+                    </tr>    
                     <tr class="d-flex">
                       <td class="col-3 bold">Status:</td>
                       <td class="col-6"><%= job.status %></td>
@@ -1679,7 +1767,7 @@ td {
                 <button type="button" class="btn col-1" data-toggle="modal" data-target="#djobID<%= job.order_id %>">Delete</button>
               </div>
         
-              <!-- Edit Job Modal -->
+          <!-- Edit Job Modal -->
           <div class="modal fade" id="ejobID<%= job.order_id %>" tabindex="-1" role="dialog" aria-labelledby="editTripModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl" role="document">
               <div class="modal-content">
@@ -1849,6 +1937,26 @@ td {
             </select>
           </div>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+          <label for="eloadingAttended">Loading Attended?</label>
+          <select class="form-control eloadingAttended" value="<%= job.loading_attended %>">
+            <option value="No" <%= job.loading_attended == 'No' ? 'selected' : ''%>>No</option>
+            <option value="Yes" <%= job.loading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+          </select>
+        </div>
+</div>
+<div class="col-4">
+  <div class="form-group">
+      <label for="eunloadingAttended">Unloading Attended?</label>
+      <select class="form-control eunloadingAttended" value="<%= job.unloading_attended %>">
+        <option value="No" <%= job.unloading_attended == 'No' ? 'selected' : ''%>>No</option>
+        <option value="Yes" <%= job.unloading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+      </select>
+    </div>
+</div>
   </div>
           <div class="row">
               <div class="col-12">
@@ -2111,6 +2219,26 @@ td {
             </select>
           </div>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+          <label for="eloadingAttended">Loading Attended?</label>
+          <select class="form-control eloadingAttended" value="<%= job.loading_attended %>">
+            <option value="No" <%= job.loading_attended == 'No' ? 'selected' : ''%>>No</option>
+            <option value="Yes" <%= job.loading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+          </select>
+        </div>
+</div>
+<div class="col-4">
+  <div class="form-group">
+      <label for="eunloadingAttended">Unloading Attended?</label>
+      <select class="form-control eunloadingAttended" value="<%= job.unloading_attended %>">
+        <option value="No" <%= job.unloading_attended == 'No' ? 'selected' : ''%>>No</option>
+        <option value="Yes" <%= job.unloading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+      </select>
+    </div>
+</div>
   </div>
           <div class="row">
               <div class="col-12">
@@ -2268,12 +2396,17 @@ td {
                     </tr>
                     <tr class="d-flex">
                       <td class="col-3 bold">Start Date:</td>
-                      <td class="col-6"><%= moment(job.est_start_date).format('M/D/YY') %></td>
+                      <td class="col-4"><%= moment(job.est_start_date).format('M/D/YY') %></td>
+                      <td class="col-2 bold">Loading Attended:</td>
+                      <td class="col-3"><%= job.loading_attended %></td>
                     </tr>
                     <tr class="d-flex">
                       <td class="col-3 bold">PM Assigned:</td>
-                      <td class="col-6"><%= job.pm_assigned %></td>
+                      <td class="col-4"><%= job.pm_assigned %></td>
+                      <td class="col-2 bold">Unloading Attended:</td>
+                      <td class="col-3"><%= job.unloading_attended %></td>
                     </tr>
+    
                     <tr class="d-flex">
                       <td class="col-3 bold">Status:</td>
                       <td class="col-6"><%= job.status %></td>
@@ -2416,7 +2549,7 @@ td {
                     <button type="button" class="btn col-1" data-toggle="modal" data-target="#djobID<%= job.order_id %>">Delete</button>
                   </div>
             
-                  <!-- Edit Job Modal -->
+          <!-- Edit Job Modal -->
           <div class="modal fade" id="ejobID<%= job.order_id %>" tabindex="-1" role="dialog" aria-labelledby="editTripModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl" role="document">
               <div class="modal-content">
@@ -2586,6 +2719,26 @@ td {
             </select>
           </div>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+          <label for="eloadingAttended">Loading Attended?</label>
+          <select class="form-control eloadingAttended" value="<%= job.loading_attended %>">
+            <option value="No" <%= job.loading_attended == 'No' ? 'selected' : ''%>>No</option>
+            <option value="Yes" <%= job.loading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+          </select>
+        </div>
+</div>
+<div class="col-4">
+  <div class="form-group">
+      <label for="eunloadingAttended">Unloading Attended?</label>
+      <select class="form-control eunloadingAttended" value="<%= job.unloading_attended %>">
+        <option value="No" <%= job.unloading_attended == 'No' ? 'selected' : ''%>>No</option>
+        <option value="Yes" <%= job.unloading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+      </select>
+    </div>
+</div>
   </div>
           <div class="row">
               <div class="col-12">
@@ -2848,6 +3001,26 @@ td {
             </select>
           </div>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+          <label for="eloadingAttended">Loading Attended?</label>
+          <select class="form-control eloadingAttended" value="<%= job.loading_attended %>">
+            <option value="No" <%= job.loading_attended == 'No' ? 'selected' : ''%>>No</option>
+            <option value="Yes" <%= job.loading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+          </select>
+        </div>
+</div>
+<div class="col-4">
+  <div class="form-group">
+      <label for="eunloadingAttended">Unloading Attended?</label>
+      <select class="form-control eunloadingAttended" value="<%= job.unloading_attended %>">
+        <option value="No" <%= job.unloading_attended == 'No' ? 'selected' : ''%>>No</option>
+        <option value="Yes" <%= job.unloading_attended == 'Yes' ? 'selected' : ''%>>Yes</option>
+      </select>
+    </div>
+</div>
   </div>
           <div class="row">
               <div class="col-12">
@@ -3005,12 +3178,17 @@ td {
                         </tr>
                         <tr class="d-flex">
                           <td class="col-3 bold">Start Date:</td>
-                          <td class="col-6"><%= moment(job.est_start_date).format('M/D/YY') %></td>
+                          <td class="col-4"><%= moment(job.est_start_date).format('M/D/YY') %></td>
+                          <td class="col-2 bold">Loading Attended:</td>
+                          <td class="col-3"><%= job.loading_attended %></td>
                         </tr>
                         <tr class="d-flex">
                           <td class="col-3 bold">PM Assigned:</td>
-                          <td class="col-6"><%= job.pm_assigned %></td>
+                          <td class="col-4"><%= job.pm_assigned %></td>
+                          <td class="col-2 bold">Unloading Attended:</td>
+                          <td class="col-3"><%= job.unloading_attended %></td>
                         </tr>
+        
                         <tr class="d-flex">
                           <td class="col-3 bold">Status:</td>
                           <td class="col-6"><%= job.status %></td>
