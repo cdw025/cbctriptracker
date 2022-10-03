@@ -47,11 +47,23 @@ router.get('/dashboard', authMiddleware.ensureLoggedIn, authMiddleware.EnsureCan
     Job.getJobs().then(jobs => {
     jobs = JSON.parse(JSON.stringify(jobs));
     // sort trip numbers largest to smallest accounting for leading D in ordnbr
-    function sortByDigits(array) {
+    
+    jobs.forEach(job => {
       var re = /\D/g;
-      
+      job.sortNumber = job.ordnbr.replace(re, '').trim();
+      parseInt(job.sortNumber);
+      console.log(job.sortNumber + '-' + job.ordnbr);
+    });
+    
+    function sortByDigits(array) {
+      // var re = /\D/g;
+      // array.forEach(e => {
+      //   parseInt(e.ordnbr.replace(re, '').trim(), 10)
+      //   console.log(e.ordnbr);
+      // });
+
       array.sort(function(a, b) {
-          return(parseInt(b.ordnbr.replace(re, ''), 10) - parseInt(a.ordnbr.replace(re, ''), 10));
+          return(b.sortNumber - a.sortNumber);
       });
       return(array);
   }
