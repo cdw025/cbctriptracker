@@ -18,7 +18,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 // moment scripts
 var shortDateFormat = "D/M/YY @ kk:mm"; // this is just an example of storing a date format once so you can change it in one place and have it propagate
-app.locals.moment = require('moment');; // this makes moment available as a variable in every EJS page
+app.locals.moment = require('moment'); // this makes moment available as a variable in every EJS page
 app.locals.shortDateFormat = shortDateFormat;
 
  
